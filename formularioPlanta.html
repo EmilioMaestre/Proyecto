@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Lectura</title>
+</head>
+<body>
+    <h2>Formulario de Lectura del Luxómetro</h2>
+    <form action="/formulario" method="post">
+        <div>
+            <label for="luxometro">Lectura del Luxómetro:</label>
+            <input type="number" id="luxometro" name="luxometro" step="0.01" required>
+        </div>
+        <div>
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" name="provincia" list="provincias" required>
+            <datalist id="provincias">
+                <option value="Cadiz"></option>
+                <option value="Malaga"></option>
+                <option value="Pais Vasco"></option>
+                <option value="Asturia"></option>
+
+            </datalist>
+        </div>
+        <div>
+            <label for="mes">Mes del Año:</label>
+            <input type="text" id="mes" name="mes" list="meses" required>
+            <datalist id="meses">
+                <option value="Abril"></option>
+                <option value="Mayo"></option>
+                <option value="Junio"></option>
+            </datalist>
+        </div>
+        <div>
+            <label for="hora">Hora de Lectura:</label>
+            <input type="time" id="hora" name="hora" required>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
