@@ -1,37 +1,39 @@
 <?php
-session_start(); // Iniciar sesión
 
-// Conexión a la base de datos
-$db = new mysqli('localhost', 'tu_usuario', 'tu_contraseña', 'tu_base_de_datos');
+session_start();
 
-// Verificar la conexión
+$db = new mysqli('localhost', 'root', '', 'selector_plantas_interior');
+
+
 if($db->connect_error) {
     die("Conexión fallida: " . $db->connect_error);
 }
 
-// Verificar si el formulario fue enviado
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $db->real_escape_string($_POST['username']);
-    $password = $_POST['password'];
 
-    // Buscar el usuario en la base de datos
-    $query = "SELECT * FROM usuarios WHERE username = '$username'";
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $db->real_escape_string($_POST['usuario']); 
+    $password = $_POST['password']; 
+
+ 
+    $query = "SELECT * FROM usuario WHERE nombre_usuario = '$username'";
     $result = $db->query($query);
 
-    if($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        // Verificar la contraseña
-        if(password_verify($password, $user['password'])) {
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $username;
-            header("Location: formulario.php"); // Redirigir al formulario
-        } else {
+    if($result->num_rows > 0) { 
+        $user = $result->fetch_assoc(); 
+        
+        if(password_verify($password, $user['password'])) { 
+            $_SESSION['loggedin'] = true; 
+            $_SESSION['username'] = $username; 
+            header('Location: ./prueba.html'); 
+        } else { 
             echo "Contraseña incorrecta.";
         }
-    } else {
+    } else { 
         echo "Usuario no encontrado.";
     }
     
-    $db->close();
+    $db->close(); 
 }
+
 ?>
+

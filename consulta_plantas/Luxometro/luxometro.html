@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Luxómetro</title>
+</head>
+<body>
+
+<form action="../../php/Luxometro.php" method="post" onsubmit="return calcularMediaYValidarHora()">
+
+
+  <div id="contenedor_campos">
+   <h4>Es aconsejable hacer varias mediciones con varias aplicaciones de luxometro e incluso usar distintos moviles asegurese de recordar la posiccion</h4>
+  </div>
+  <button type="button" onclick="anadirCampo()">Añadir Campo de Contraste</button><br><br>
+
+  <label for="resultado">Media de Contraste:</label>
+  <input type="text" id="resultado" name="resultado" readonly><br><br>
+  <label for="hora">Hora de la medición (formato 24h):</label>
+  <input type="text" id="hora" name="hora"><br><br>
+
+  <button type="submit">Enviar Datos</button>
+</form>
+
+<script src="javaScript.js"></script>
+
+</body>
+</html>

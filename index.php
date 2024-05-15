@@ -13,31 +13,23 @@
     <a href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html">lo quiero en fisico</a>
 
     <div>
-        <a href="registro.html" target="_self">
+        <a href="./sesion/registro.html" target="_self">
         <button type="submit">registrarte</button></a>
     </div>
 
-    <form action="/inicio" method="post">
+    <form action="./sesion/iniciarSesion.php" method="post">
     <div>
         <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
     </div>
     <div>
         <label for="contraseña">Contraseña</label>
-        <input type="password" id="contraseña" name="contraseña" required>
+        <input type="password" id="password" name="password" required>
     </div>
     <div>
         <button type="submit">Iniciar Sesion</button>
     </div>
 </form>
-
-
-
-
-
-    <script src="JavaScript.js">
-
-    </script>
     
 </body>
 </html>
