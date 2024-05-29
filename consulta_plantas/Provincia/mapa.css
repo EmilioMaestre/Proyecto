@@ -21,3 +21,9 @@ path {
     fill: transparent;
     pointer-events: all;
 }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Esto asegura que la barra de navegación esté siempre en la parte superior */
+}

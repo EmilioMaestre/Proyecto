@@ -1,0 +1,22 @@
+.mes {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #7a0894;
+  display: inline-block;
+  cursor: pointer;
+}
+.mes:hover {
+  background-color: #171515;
+}
+.formularioR{
+  text-align: center;
+  font-size: 200%;
+  color: #000000;
+}
+.imagen-con-texto {
+  position: relative;
+
+  color: rgb(17, 16, 16);
+
+  padding: 20px;
+}

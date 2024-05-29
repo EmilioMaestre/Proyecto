@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedidos</title>
+</head>
+<body>
+    <h1>Formulario de Pedidos</h1>
+    <form action="procesar_pedido.php" method="post">
+        <!-- Hidden field for the order number (assigned by the database) -->
+        <input type="hidden" id="numero_pedido" name="numero_pedido" value="12345">
+
+        <!-- Hidden field for the user (retrieved from the database) -->
+        <input type="hidden" id="usuario_pedido" name="usuario_pedido" value="JohnDoe">
+
+        <!-- Hidden field for the product ID (provided by PHP) -->
+        <input type="hidden" id="id_producto" name="id_producto" value="42">
+
+        <!-- Input field for the price (retrieved from the database) -->
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" value="19.99" readonly>
+        <br>
+
+        <!-- Input field for the quantity -->
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" required>
+        <br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Realizar Pedido">
+    </form>
+</body>
+</html>

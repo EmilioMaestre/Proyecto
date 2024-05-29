@@ -22,9 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc(); 
         
         if(password_verify($password, $user['password'])) { 
-            $_SESSION['loggedin'] = true; 
-            $_SESSION['username'] = $username; 
-            header('Location: ./prueba.html'); 
+            header('Location: \proyecto\consulta_plantas\Luxometro\luxometro.html'); 
         } else { 
             echo "Contraseña incorrecta.";
         }
