@@ -84,16 +84,17 @@ $idsProductosStr = implode(",", $idsProductos);
 
 switch ($zonas[$codigoDetectado]) {
     case "ZONA A":
-        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia` FROM `producto` WHERE Zona_A=1 AND id_Producto IN ($idsProductosStr)";
+        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia`,`precio` FROM `producto` WHERE Zona_A=1 AND id_Producto IN ($idsProductosStr)";
         break;
     case "ZONA B":
-        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia` FROM `producto` WHERE Zona_B=1 AND id_Producto IN ($idsProductosStr)";
+        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia`,`precio` FROM `producto` WHERE Zona_B=1 AND id_Producto IN ($idsProductosStr)";
         break;
     case "ZONA C":
-        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia` FROM `producto` WHERE Zona_C=1 AND id_Producto IN ($idsProductosStr)";
+        $consulta = "SELECT `id_producto`, `Especie`, `Nombre_comun`, `Tipo`, `Familia`, `Procedencia`,`precio` FROM `producto` WHERE Zona_C=1 AND id_Producto IN ($idsProductosStr)";
         break;
     default:
         $consulta = null;
+        break;
 }
 
 
@@ -116,24 +117,80 @@ if ($resultado->num_rows > 0) {
         .listada{
             text-align: center;
         }
+        th {
+            background-color: grey;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ddd;
+          }
+          td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+          }
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+          body{
+            background: url('../imagenes/secciones.jpg') 
+            no-repeat center center;
+             background-size: cover;
+          }
+          .boton-atras {
+            position: fixed; /* Posición fija */
+            bottom: 0; /* Siempre en la parte inferior */
+            right: 0; /* A la derecha */
+            background-color: #4CAF50; /* Verde */
+            border: none;
+            color: white; /* Letras blancas */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px; /* Bordes redondeados */
+          }
+          
+          .boton-atras:hover {
+            background-color: #45a049; /* Verde oscuro al pasar el ratón */
+          }
+
     </style>";
+    
     echo "<h4 class='listada'>Listado de Planta que puede colocar</h4>";
     echo "<table>";
-    echo "<tr><th>Especie</th><th>Nombre común</th><th>Tipo</th><th>Familia</th><th>Procedencia</th><th>Acción</th></tr>";
+    echo "<tr class='container' ><th>Especie</th><th>Nombre común</th><th>Tipo</th><th>Familia</th><th>Procedencia</th><th>precio</th><th>Acción</th></tr>";
     
     while($fila = $resultado->fetch_assoc()) {
-        echo "<tr><td>" . $fila["Especie"]. "</td><td>" . $fila["Nombre_comun"]. "</td><td>" . $fila["Tipo"]. "</td><td>" . $fila["Familia"]. "</td><td>" . $fila["Procedencia"]. "</td>";
+        echo "<tr><td>" . $fila["Especie"]. "</td><td>" . $fila["Nombre_comun"]. "</td><td>" . $fila["Tipo"]. "</td><td>" . $fila["Familia"]. "</td><td>" . $fila["Procedencia"]. "</td><td>" . $fila["precio"]. "</td>";
         echo "<td>
-            <form action='hacer_pedido.php' method='post'>
-                <input type='hidden' name='id_producto' value='" . $fila["id_producto"] . "'>
-                <input type='number' name='cantidad' min='1' value='1'>
-                <input type='text' name='direccion' placeholder='Dirección de envío'>
-                <input type='submit' value='Hacer Pedido'>
-            </form>
-        </td></tr>";
-    }
-    echo "</table>";
-} else {
+        <form action='hacer_pedido.php' method='post'>
+            <input type='hidden' name='id_producto' value='" . $fila["id_producto"] . "'>
+            <input type='hidden' name='especie' value='" . $fila["Especie"] . "'>
+            <input type='hidden' name='nombre_comun' value='" . $fila["Nombre_comun"] . "'>
+            <input type='hidden' name='familia' value='" . $fila["Familia"] . "'>
+            <input type='hidden' name='precio' value='" . $fila["precio"] . "'>
+            <input type='number' name='cantidad' min='1' value='1'>
+            <input type='text' name='direccion' placeholder='Dirección de envío'>
+            <input type='submit' value='Hacer Pedido'>
+        </form>
+    </td></tr>";
+}
+echo ' <div>
+<script>
+function goBack() {
+    window.history.back();
+  }
+</script>
+<button class="boton-atras" onclick="goBack()">Atrás</button>
+</div>';
+echo "</table>";
+}
+ else {
     echo "No se encontraron resultados";
 }
 

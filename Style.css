@@ -1,107 +1,4 @@
-/*.letrasDePresentacion{
-    text-align: right;
-    font-size: 300%;
-    color: #000000;
-}
-.imagen-con-texto {
-    position: relative;
-
-
-
-  }
-  .Explicacion{
-    position: relative;
-    text-align: right;
-    font-size: 100%;
-    color: #000000;
-  }
-
-
-  .imagen-con-texto .letrasDePresentacion {
-    position: absolute;
-  top: 10%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  
-}
-.imagen-con-texto .Explicacion {
-    position: absolute;
-  top: 20%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  
-}
-
-.imagen-con-texto .video {
-    position: absolute;
-  top: 40%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  
-}
-
-.imagenseccion{
-    position: relative;
-}
-.formularioR{
-    
-    text-align: center;
-    font-size: 200%;
-    color: #000000;
-  }
-
-  .imagenseccion .formularioR{
-    position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  }
-  /*
-  Arreglar alinamiento de formulario
-  Añadir imagen a todas las secciones
-  */
-
-  .letrasDePresentacion{
-    text-align: right;
-    font-size: 300%;
-    color: #000000;
-  }
-  
-  .Explicacion{
-    text-align: right;
-    font-size: 100%;
-    color: #000000;
-  }
-  
-  .formularioR{
-    text-align: center;
-    font-size: 200%;
-    color: #000000;
-  }
-
-  .imagen-con-texto .imagen-con-texto {
-    position: relative;
-  }
-  
-  .contenido-superpuesto {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .letrasDePresentacion{
-    text-align: right;
-    font-size: 300%;
-    color: #000000;
-  }
-  
-  .Explicacion{
-    text-align: right;
-    font-size: 100%;
-    color: #000000;
-  }
-  
-  .formularioR{
+ .formularioR{
     text-align: center;
     font-size: 200%;
     color: #000000;
@@ -111,4 +8,94 @@
     color: white;
     padding: 20px;
 }
+
+
+@media (max-width: 768px) {
+  .letrasDePresentacion {
+    font-size: 150%;
+  }
+  .Explicacion {
+    font-size: 50%;
+  }
+  .formularioR {
+    font-size: 100%;
+  }
+  .video{
+    font-size: 200%;
+  }
+}
+img.portada {
+  max-width: 100%;
+  height: auto;
+}
+
+.letrasDePresentacion, .Explicacion, .formularioR {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .letrasDePresentacion {
+    text-align: right;
+    font-size: 3vw;
+  }
+  
+  .Explicacion {
+    text-align: right;
+    font-size: 1vw;
+  }
+  
+  .formularioR {
+    text-align: center;
+    font-size: 2vw;
+  }
+  video{
+    text-align: right;
+    font-size: 14vw;
+  }
+}
+
+
+.imagen-con-texto img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.contenido-superpuesto {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .video iframe {
+    width: 800px;
+    height: 450px;
+  }
+}
+
+.boton-atras {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.boton-atras:hover {
+  background-color: #45a049;
+}
+
+
+
   

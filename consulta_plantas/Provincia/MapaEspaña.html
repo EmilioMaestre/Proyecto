@@ -17,21 +17,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="https://play.google.com/store/apps/details?id=kr.sira.luxmeter&pcampaignid=web_share">Luxometrò App</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html">Luxometrò Fìsico</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html">Ayuda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Preguntas frecuentes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href=".\consulta_plantas\Luxometro\luxometro.html">consulta libre</a>
-            </li>
+            <a class="nav-link" href="https://play.google.com/store/apps/details?id=kr.sira.luxmeter&pcampaignid=web_share" target="_blank">Luxometrò App</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html" target="_blank">Luxometrò Fìsico</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="../../ayudaPaguina.html" target="_blank">Ayuda</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="../../preguntaFrecuentes.html" target="_blank">Preguntas frecuentes</a>
+
             
         </ul>
         <form class="form-inline">
@@ -50,6 +46,13 @@
     <div class="row">
         <div class="col" style="background: url('../../imagenes/secciones.jpg') no-repeat center center; background-size: cover;">
             <div class="container">
+                <div style=" margin-top: 5%; text-align: center;">
+                    <h1>Selecciona tu provincia</h1>
+                </div>
+                <div style=" text-align: center;">
+                    donde te encuentras.¿Por què necesitamos saberlo? Porque la cantidad de luz no es la misma en una zona que en otra
+                </div>
+                
                     <svg  version="1.2" viewbox="0 0 1000 890" width="1000" xmlns="http://www.w3.org/2000/svg">
                         <g id="features">
                             <path class="provincia" d="M563.6 459.2l-0.3-0.3 0.1-0.1 0-0.1 0-0.1 0-0.1 0-0.1 0-0.1 0.1-0.2 0-0.1-0.1 0-0.1 0 0-0.1 0-0.1-0.1 0 0 0.1-0.1 0-0.1 0 0-0.1-0.1 0-0.1 0 0-0.1-0.1-0.1-0.1 0-0.1 0 0-0.1-0.1 0-0.1 0 0-0.1 0-0.1-0.1-0.1 0-0.1 0-0.1 0-0.1 0-0.1-0.1 0 0-0.1 0-0.1 0.1 0-0.1 0 0-0.1 0-0.1 0-0.1 0-0.1 0-0.1-0.1 0 0-0.1-0.1 0 0-0.1 0 0.1-0.1 0-0.1 0 0 0.1-0.1 0-0.1 0-0.3-0.8 0.6 0 0.8 0 0.9 0.5 0.6 0.6 0.8 0.1 1-0.5-0.3 1-1.8 1.4-0.2 0.8z" id="ESCE" name="Ceuta">
@@ -279,6 +282,27 @@
                     <script src="javascript.js"></script>
                 </div>
             </div>
+        </div>
+        <script>
+            function goBack() {
+    window.history.back();
+  }
+        </script>
+        <div>
+            <button class="boton-atras" style=" position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;" onclick="goBack() ">Atrás</button>
         </div>
 
 

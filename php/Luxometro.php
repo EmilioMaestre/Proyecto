@@ -73,6 +73,7 @@ $_SESSION['resultadosHora'] = array();
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         array_push($_SESSION['resultadosHora'], $row);
+        header('Location: ../consulta_plantas/Provincia/MapaEspaña.html');
     }
 } else {
     echo "No se encontraron productos";
@@ -88,7 +89,7 @@ if ($result->num_rows > 0) {
 
 
 $conexion->close();
-    header('Location: ../consulta_plantas/Provincia/MapaEspaña.html');
+    
 
 ?>
 
