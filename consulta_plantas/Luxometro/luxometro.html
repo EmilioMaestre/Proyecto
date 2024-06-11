@@ -23,17 +23,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-    <a class="nav-link" href="https://play.google.com/store/apps/details?id=kr.sira.luxmeter&pcampaignid=web_share" target="_blank">Luxometrò App</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html" target="_blank">Luxometrò Fìsico</a>
-</li>
+  
 <li class="nav-item">
     <a class="nav-link" href="../../ayudaPaguina.html" target="_blank">Ayuda</a>
 </li>
-<li class="nav-item">
-    <a class="nav-link" href="../../preguntaFrecuentes.html" target="_blank">Preguntas frecuentes</a>
-</li>
+
             
             
         </ul>
@@ -46,21 +40,21 @@
     <div class="imagen-con-texto" style="background: url('../../imagenes/secciones.jpg') no-repeat center center; background-size: cover;">
       <div class="contenido-superpuesto col-12 col-sm-6 offset-sm-6">
         <h4 class="letrasDePresentacion">Seleccione el mes del año</h4>
-        <div id="calendar">
-          <form action="../../php/Luxometro.php" method="post" onsubmit="return calcularMediaYValidarHora()">
-            <div class="Explicacion">Es aconsejable hacer varias mediciones con varias aplicaciones de luxometro e incluso usar distintos moviles asegurese de recordar la posiccion</div>
-            <div class="Explicacion" id="contenedor_campos">
-            </div>
-            <input type="hidden" id="mesSeleccionado" name="mesSeleccionado" value="">
-            <button type="button" onclick="anadirCampo()" class="formularioR">Añadir medicion de luxomentro</button><br><br>         
-            <label for="resultado" style="display: none;">Media de Contraste:</label>
-            <input type="hidden" id="resultado" name="resultado" readonly><br><br>
-            <label for="hora" class="formularioR">Hora de la medición (formato 24h):</label>
-            <input type="text" id="hora" name="hora"><br><br>
-            <button type="submit" class="formularioR">Enviar Datos</button>
-          </form>
-        </div>
-        <script src="javaScript.js"></script>
+        <div class="Explicacion">Necesitamos saber en que mes estas tomando las lecturas</div>
+<div id="calendar"></div>
+<div class="Explicacion">Es aconsejable hacer varias mediciones con varias aplicaciones de luxometro e incluso usar distintos moviles asegurese de recordar la posiccion</div>
+<form action="../../php/Luxometro.php" method="post" onsubmit="return calcularMediaYValidarHora()">
+  <div class="Explicacion" id="contenedor_campos"></div>
+  <input type="hidden" id="mesSeleccionado" name="mesSeleccionado" value="">
+  <button type="button" onclick="anadirCampo()" class="formularioR">Añadir medicion de luxomentro</button><br><br>
+  <div class="Explicacion">Necesitamos saber en que hora se tomaron las lectura (no indique minutos)</div>
+  <label for="hora" class="formularioR">Hora de la medición (formato 24h):</label>
+  <input type="text" id="hora" name="hora"><br><br>
+  <label for="resultado" style="display: none;">Media de Contraste:</label>
+  <input type="hidden" id="resultado" name="resultado" readonly><br><br>
+  <button type="submit" class="formularioR">Paso siguiente</button>
+</form>
+<script src="javaScript.js"></script>
       </div>
     </div>
   </div>

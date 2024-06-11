@@ -1,4 +1,10 @@
 
+window.onload = function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.get('registrado') === 'true') {
+        alert('Usuario registrado con éxito');
+    }
+}
 function goBack() {
   window.history.back();
 }
@@ -58,6 +64,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             contrasena.style.borderColor = 'red';
             mensajeContrasena.textContent = 'Contraseña no válida';
             mensajeContrasena.style.color = 'red';
+        }
+    });
+
+    // Agregar evento de envío al formulario
+    document.querySelector('form').addEventListener('submit', function(event) {
+        if (!validarCorreo(correo.value) || !validarContrasena(contrasena.value)) {
+            event.preventDefault();
+            alert('Por favor, corrija los errores antes de enviar el formulario.');
         }
     });
 });

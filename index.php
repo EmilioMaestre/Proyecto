@@ -33,21 +33,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-    <a class="nav-link" href="https://play.google.com/store/apps/details?id=kr.sira.luxmeter&pcampaignid=web_share" target="_blank">Luxometrò App</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="https://tecnocultivo.es/cables-y-accesorios/813-luxometro.html" target="_blank">Luxometrò Fìsico</a>
-</li>
+            
 <li class="nav-item">
     <a class="nav-link" href="ayudaPaguina.html" target="_blank">Ayuda</a>
 </li>
-<li class="nav-item">
-    <a class="nav-link" href="preguntaFrecuentes.html" target="_blank">Preguntas frecuentes</a>
-</li>
-                <li class="nav-item">
-                    <a class="nav-link" href=".\consulta_plantas\Luxometro\luxometro.html">consulta libre</a>
-                </li>
                 
             </ul>
             <form class="form-inline">
@@ -69,7 +58,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="contenido-superpuesto col-12 col-sm-6 offset-sm-6">
         <div class="letrasDePresentacion">Bienvenido al selector de plantas del interior</div>
         <div class="Explicacion">Solo necesitas instalar un luxometró en tu telefono movil o tablet. Ya no cometeras mas errores a la hora de elegir tus plantas de interior</div>
-        <div class="video"><iframe   src="https://www.youtube.com/embed/jRDheoa4naY?si=UuJkZM8I_OhxPxL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       </div>
     </div>
   </div>

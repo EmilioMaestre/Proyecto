@@ -126,6 +126,7 @@ function hacerPedido(id_producto, especie, nombre_comun, familia, precio) {
     checkoutButton.addEventListener('click', function() {
         // Enviar el formulario
         form.submit();
+        window.open('https://buy.stripe.com/test_6oE5l05LU5v9dUc6op', '_blank');
     });
 
     // Añadir el botón al DOM
@@ -204,13 +205,15 @@ var showHTML = () => {
         totalOfProducts += product.quantity;
         total += product.quantity * product.precio;
     });
+    
 
     // Imprime los datos en la consola
     console.log(formData);
 
     valorTotal.innerText = `${total} €`;
     countProducts.innerText = totalOfProducts;
-
+}
+    /*
     axios({
         method: 'post',
         url: 'http://localhost/proyecto/php/hacer_pedido.php',
@@ -243,7 +246,7 @@ checkoutButton.addEventListener('click', function() {
 });
 
 // Añadir el botón al DOM
-document.body.appendChild(checkoutButton);
+document.body.appendChild(checkoutButton);*/
 
 
 

@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO usuario (nombre_usuario,email, password) VALUES ('$nombre_usuario', '$email', '$password')";
     
     if($db->query($query) === TRUE) { 
-        echo "Usuario registrado con éxito.";
+        header("Location: registro.html?registrado=true");
     } else { 
         echo "Error: " . $query . "<br>" . $db->error;
     }

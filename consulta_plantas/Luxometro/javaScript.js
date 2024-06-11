@@ -6,7 +6,7 @@ function anadirCampo() {
     var nuevoCampo = document.createElement('input');
     nuevoCampo.setAttribute('type', 'number');
     nuevoCampo.setAttribute('name', 'valorLuxometro' + (totalCampos + 1));
-    nuevoCampo.setAttribute('placeholder', 'Medición del Luxómetro ' + (totalCampos + 1)); // Cambio aquí
+    nuevoCampo.setAttribute('placeholder', 'Medición del Luxómetro ' + (totalCampos + 1));
     nuevoCampo.classList.add('campo-contraste');
     contenedor.appendChild(nuevoCampo);
   } else {
@@ -26,13 +26,36 @@ function validarHora(hora) {
   }
 }
 
+function validarLuxometro() {
+  var valores = document.getElementsByClassName('campo-contraste');
+  for(var i = 0; i < valores.length; i++) {
+    if(valores[i].value < 355) {
+      alert('Debe elegir un lugar que de más luz.');
+      return false;
+    }
+    if(valores[i].value > 10000) {
+      alert('Estas mediciones no son para plantas de interior.');
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function validarMes() {
+  var mesSeleccionado = document.getElementById('mesSeleccionado').value;
+  if (!mesSeleccionado) {
+    alert('Debe seleccionar un mes.');
+    return false;
+  }
+  return true;
+}
 
 function calcularMediaYValidarHora() {
   var horaCompleta = document.getElementById('hora').value;
   var hora = horaCompleta.split(':')[0];
 
-  if (!validarHora(horaCompleta)) {
-    alert('Los datos proporcionados no sirven. Las medidas deben tomarse de 10 de la mañana a 3 de la tarde.');
+  if (!validarHora(horaCompleta) || !validarLuxometro() || !validarMes()) {
     return false;
   }
 

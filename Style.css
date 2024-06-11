@@ -95,7 +95,50 @@ img.portada {
 .boton-atras:hover {
   background-color: #45a049;
 }
+.titulo {
+  color: #27ae60;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
 
+.pregunta, .respuesta {
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 18px;
+}
 
+.pregunta {
+  font-weight: bold;
+}
+
+.respuesta {
+  margin-left: 20px;
+}
+
+.boton {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
   

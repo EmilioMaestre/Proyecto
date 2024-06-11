@@ -41,15 +41,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Encabezado
         $pdf->Cell(0, 10, 'Pedido', 0, 1, 'C');
         $pdf->Ln(10);
+       //$pdf->Cell(0, 10,utf8_decode("Nombre común:    $nombre_comun[$i]"),0,1);
+       //
 
         // Número de pedido
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(0, 10, 'Número de pedido: ' . $id_pedido, 0, 1);
+        //$pdf->Cell(0, 10, 'Número de pedido: ' . $id_pedido, 0, 1);
+        $pdf->Cell(0, 10,utf8_decode("Número de pedido:    $id_pedido"),0,1);
 
         // Datos del pedido
         for ($i = 0; $i < count($id_producto); $i++) {
             $pdf->Cell(0, 10, 'Especie: ' . $especie[$i], 0, 1);
-            $pdf->Cell(0, 10, 'Nombre común: ' . $nombre_comun[$i], 0, 1);
+            $pdf->Cell(0, 10,utf8_decode("Nombre común:    $nombre_comun[$i]"),0,1);
             $pdf->Cell(0, 10, 'Familia: ' . $familia[$i], 0, 1);
             $pdf->Cell(0, 10, 'Precio: ' . $precio[$i], 0, 1);
             $pdf->Cell(0, 10, 'Cantidad: ' . $quantity[$i], 0, 1);

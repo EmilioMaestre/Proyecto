@@ -104,62 +104,7 @@ $_SESSION['resultadosZona'] = array();
 
 
 if ($resultado->num_rows > 0) {
-    echo "<style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        .listada{
-            text-align: center;
-        }
-        th {
-            background-color: grey;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            padding: 8px;
-            border: 1px solid #ddd;
-          }
-          td {
-            padding: 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-          }
-          tr:nth-child(even) {
-            background-color: #f2f2f2;
-          }
-          body{
-            background: url('../imagenes/secciones.jpg') 
-            no-repeat center center;
-             background-size: cover;
-          }
-          .boton-atras {
-            position: fixed; /* Posición fija */
-            bottom: 0; /* Siempre en la parte inferior */
-            right: 0; /* A la derecha */
-            background-color: #4CAF50; /* Verde */
-            border: none;
-            color: white; /* Letras blancas */
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 12px; /* Bordes redondeados */
-          }
-          
-          .boton-atras:hover {
-            background-color: #45a049; /* Verde oscuro al pasar el ratón */
-          }
 
-    </style>";
    
     echo "<h4 class='listada'>Listado de Planta que puede colocar</h4>";
     echo "<table>";
@@ -177,6 +122,7 @@ if ($resultado->num_rows > 0) {
 		<title>Tienda</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
+  
 	<body>
 		<header>
 			<h1>Tienda</h1>
@@ -241,7 +187,7 @@ if ($resultado->num_rows > 0) {
 
 
     
-    echo "<tr class='container' ><th>Especie</th><th>Nombre común</th><th>Tipo</th><th>Familia</th><th>Procedencia</th><th>precio</th><th>Acción</th></tr>";
+    echo "<tr class='container'></tr>";
     
     while($fila = $resultado->fetch_assoc()) {
         echo "<div class='item'>";
