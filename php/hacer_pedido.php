@@ -1,66 +1,70 @@
 <?php
-
 session_start();
 $conexion = new mysqli('localhost', 'root', '', 'selector_plantas_interior');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibe los datos del formulario
+    $id_producto = $_POST['id_producto'];
+    $especie = $_POST['especie'];
+    $nombre_comun = $_POST['nombre_comun'];
+    $familia = $_POST['familia'];
+    $precio = $_POST['precio'];
+    $quantity = $_POST['quantity'];
 
-mysqli_set_charset($conexion, 'utf8');
+    // Calcula el precio total del pedido
+    $precio_total = 0;
+    for ($i = 0; $i < count($precio); $i++) {
+        $precio_total += $precio[$i] * $quantity[$i];
+    }
 
-$id_usuario = $_SESSION['id_usuario'];
-$especie = $_POST['especie'];
-$nombre_comun = $_POST['nombre_comun'];
-$familia = $_POST['familia'];
-$precio = $_POST['precio'];
-$cantidad = $_POST['cantidad'];
-$direccion = $_POST['direccion'];
-$id_producto = $_POST['id_producto'];
+    // Inserta el pedido en la tabla 'pedidos'
+    $stmt = $conexion->prepare("INSERT INTO pedidos (id_usuario, precio_total) VALUES (?, ?)");
+    $stmt->bind_param("id", $_SESSION['id_usuario'], $precio_total);
+    $stmt->execute();
+    if (!$stmt->execute()) {
+        echo "Error al insertar pedido: " . $conexion->error;
+    }
 
+    $id_pedido = $conexion->insert_id;
 
-
-$sql="INSERT INTO `pedidos`(`id_usuario`, `id_producto`, `cantidad`, `precio`, `direccion`) VALUES (?, ?, ?, ?, ?)";
-
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("iiids", $id_usuario, $id_producto, $cantidad, $precio, $direccion);
+    for ($i = 0; $i < count($id_producto); $i++) {
+        $stmt = $conexion->prepare("INSERT INTO productos_pedido (id_pedido, id_producto, cantidad) VALUES (?, ?, ?)");
+        $stmt->bind_param("iii", $id_pedido, $id_producto[$i], $quantity[$i]);
+        $stmt->execute();
+    }
 
     if ($stmt->execute()) {
-        
         require('./../fpdf/fpdf.php');
-
         $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 16);
 
+        // Encabezado
+        $pdf->Cell(0, 10, 'Pedido', 0, 1, 'C');
+        $pdf->Ln(10);
 
-$pdf->AddPage();
+        // Número de pedido
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(0, 10, 'Número de pedido: ' . $id_pedido, 0, 1);
 
+        // Datos del pedido
+        for ($i = 0; $i < count($id_producto); $i++) {
+            $pdf->Cell(0, 10, 'Especie: ' . $especie[$i], 0, 1);
+            $pdf->Cell(0, 10, 'Nombre común: ' . $nombre_comun[$i], 0, 1);
+            $pdf->Cell(0, 10, 'Familia: ' . $familia[$i], 0, 1);
+            $pdf->Cell(0, 10, 'Precio: ' . $precio[$i], 0, 1);
+            $pdf->Cell(0, 10, 'Cantidad: ' . $quantity[$i], 0, 1);
+        }
 
-$pdf->SetFont('Arial', 'B', 16);
+        // Total
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(0, 10, 'Total: ' . $precio_total, 0, 1);
 
-
-$pdf->Cell(40, 10, 'Especie: ' . $especie);
-$pdf->Ln();
-$pdf->Cell(40, 10,utf8_decode("Nombre común:   $nombre_comun"));
-
-$pdf->Ln();
-$pdf->Cell(40, 10, 'Familia: ' . $familia);
-$pdf->Ln();
-$pdf->Cell(40, 10, 'Precio: ' . $precio);
-$pdf->Ln();
-$pdf->Cell(40, 10, 'Cantidad: ' . $cantidad);
-$pdf->Ln();
-$pdf->Cell(40, 10,utf8_decode("Dirección:   $direccion"));
-$pdf->Ln();
-$pdf->Cell(40, 10,utf8_decode("Código de referencia del producto:   $id_producto") );
-
-
-$pdf->Output('D', 'pedido.pdf');
-echo "Pedido realizado con éxito";
-
-
-
-
-      
+        $pdf->Output('D', 'pedido.pdf');
+        echo "Pedido realizado con éxito";
     } else {
         echo "Error: " . $stmt->error;
     }
 
     $stmt->close();
-
+}
 ?>
