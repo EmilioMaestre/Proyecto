@@ -106,8 +106,8 @@ $_SESSION['resultadosZona'] = array();
 if ($resultado->num_rows > 0) {
 
    
-    echo "<h4 class='listada'>Listado de Planta que puede colocar</h4>";
-    echo "<table>";
+    //echo "<h4 class='listada'>Listado de Planta que puede colocar</h4>";
+    //echo "<table>";
 
 
 
@@ -121,11 +121,18 @@ if ($resultado->num_rows > 0) {
 		/>
 		<title>Tienda</title>
 		<link rel="stylesheet" href="styles.css" />
+
 	</head>
   
 	<body>
+
+
+
+
+
+    <table>
 		<header>
-			<h1>Tienda</h1>
+			<h1>Listado ideal para la ubicacion que a elegido</h1>
 			<div class="container-icon">
 				<div class="container-cart-icon">
 					<svg

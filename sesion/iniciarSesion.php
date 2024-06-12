@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc(); 
             
             if(password_verify($password, $user['password'])) {
-                // Almacenar el id_usuario en la sesión
+                
                 $_SESSION['id_usuario'] = $user['id_usuario'];
                 
                 header('Location: .\..\consulta_plantas\Luxometro\luxometro.html');

@@ -213,42 +213,4 @@ var showHTML = () => {
     valorTotal.innerText = `${total} €`;
     countProducts.innerText = totalOfProducts;
 }
-    /*
-    axios({
-        method: 'post',
-        url: 'http://localhost/proyecto/php/hacer_pedido.php',
-        data: formData,
-        headers: {'Content-Type': 'application/json'}
-    })
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-};
-
-
-var checkoutButton = document.createElement('button');
-checkoutButton.innerText = 'Finalizar compra';
-checkoutButton.classList.add('checkout-button');
-checkoutButton.classList.add('finalizar-compra');
-// Función para redirigir a una página externa
-checkoutButton.addEventListener('click', function() {
-    // Aquí puedes poner la URL de la página externa a la que quieres redirigir
-    window.open('https://buy.stripe.com/test_6oE5l05LU5v9dUc6op', '_blank');
-});
-
-// Función para redirigir a una página interna
-checkoutButton.addEventListener('click', function() {
-    // Aquí puedes poner la ruta de la página interna a la que quieres redirigir
-    window.location.href = 'hacer_pedido.php';
-});
-
-// Añadir el botón al DOM
-document.body.appendChild(checkoutButton);*/
-
-
-
-
-
+    

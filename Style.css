@@ -4,9 +4,9 @@
     color: #000000;
 }
 .imagenseccion {
-    position: relative;
-    color: white;
-    padding: 20px;
+  background: url('../imagenes/secciones.jpg') repeat-y;
+background-size: 100% auto;
+background-repeat: repeat-y;
 }
 
 
@@ -30,7 +30,7 @@ img.portada {
 }
 
 .letrasDePresentacion, .Explicacion, .formularioR {
-  text-align: center;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -141,4 +141,15 @@ img.portada {
   flex-direction: column;
 }
 
-  
+        .imagen {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+        }

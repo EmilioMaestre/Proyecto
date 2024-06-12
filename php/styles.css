@@ -245,10 +245,10 @@ th {
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  body{
-    background: url('../imagenes/secciones.jpg') 
-    no-repeat center center;
-     background-size: cover;
+    body {
+        background: url('../imagenes/secciones.jpg') repeat-y;
+        background-size: 100% auto;
+     background-repeat: repeat-y;
   }
   .boton-atras {
     position: fixed; /* Posición fija */
@@ -270,3 +270,4 @@ th {
   .boton-atras:hover {
     background-color: #45a049; /* Verde oscuro al pasar el ratón */
   }
+

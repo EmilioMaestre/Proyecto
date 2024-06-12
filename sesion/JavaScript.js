@@ -5,9 +5,7 @@ window.onload = function() {
         alert('Usuario registrado con éxito');
     }
 }
-function goBack() {
-  window.history.back();
-}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     function validarCorreo(correo) {
         var regexCorreo = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;

@@ -122,9 +122,7 @@ function mostrarMeses() {
     calendar.appendChild(mesElement);
   });
 }
-function goBack() {
-  window.history.back();
-}
+
 
 
 

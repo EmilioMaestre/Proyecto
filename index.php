@@ -35,7 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ul class="navbar-nav mr-auto">
             
 <li class="nav-item">
-    <a class="nav-link" href="ayudaPaguina.html" target="_blank">Ayuda</a>
+    <a class="nav-link" href="ayudaPaguina.html">Ayuda</a>
 </li>
                 
             </ul>
@@ -57,7 +57,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="imagen-con-texto">
       <div class="contenido-superpuesto col-12 col-sm-6 offset-sm-6">
         <div class="letrasDePresentacion">Bienvenido al selector de plantas del interior</div>
-        <div class="Explicacion">Solo necesitas instalar un luxometró en tu telefono movil o tablet. Ya no cometeras mas errores a la hora de elegir tus plantas de interior</div>
+        <div class="Explicacion">Solo necesitas instalar un luxometró en tu telefono movil
+          </div><div class="Explicacion"> o tablet. Ya no cometeras mas errores a la hora de elegir tus plantas de interior</div>
       </div>
     </div>
   </div>
